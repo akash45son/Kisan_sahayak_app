@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Government Schemes</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/schemes.css" />
+</head>
+<body>
+
+  <nav id="navbar"></nav>
+
+  <h2>Government Schemes & Financial Support</h2>
+
+  <!-- 🔽 Scheme Category Filter -->
+  <div class="filter-container">
+    <label for="categoryFilter">Filter Schemes:</label>
+    <select id="categoryFilter">
+      <option value="all">All Schemes</option>
+      <option value="income_support">Income Support & Welfare</option>
+      <option value="subsidy_support">Subsidy & Input Support</option>
+      <option value="irrigation_infra">Irrigation & Infrastructure</option>
+      <option value="insurance_risk">Insurance & Risk Protection</option>
+      <option value="credit_finance">Credit & Financial Support</option>
+      <option value="training_social">Training & Social Security</option>
+    </select>
+  </div>
+
+  <!-- 📦 Schemes List -->
+  <div id="schemesContainer"></div>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/schemes.js"></script>
+</body>
+</html>
