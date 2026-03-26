@@ -10,24 +10,158 @@
 
   <nav id="navbar"></nav>
 
-  <h2>Government Schemes & Financial Support</h2>
+  <h2 data-en="Government Schemes & Financial Support"
+      data-hi="सरकारी योजनाएं और वित्तीय सहायता">
+    Government Schemes & Financial Support
+  </h2>
 
-  <!-- 🔽 Scheme Category Filter -->
+  <!-- ✅ ELIGIBILITY CHECKER -->
+  <div class="eligibility-section">
+    <div class="eligibility-header" id="eligibilityToggle">
+      <div class="eligibility-header-left">
+        <span class="eligibility-icon">🎯</span>
+        <div>
+          <h3 data-en="Eligibility Checker" data-hi="पात्रता जांचकर्ता">Eligibility Checker</h3>
+          <p data-en="Find schemes you qualify for" data-hi="अपने योग्य योजनाएं खोजें">Find schemes you qualify for</p>
+        </div>
+      </div>
+      <span class="toggle-arrow" id="toggleArrow">▼</span>
+    </div>
+
+    <div class="eligibility-body" id="eligibilityBody">
+      <div class="eligibility-grid">
+
+        <div class="form-group">
+          <label for="stateInput" data-en="Your State" data-hi="आपका राज्य">Your State</label>
+          <select id="stateInput">
+            <option value="" data-en="-- Select State --" data-hi="-- राज्य चुनें --">-- Select State --</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assam">Assam</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="West Bengal">West Bengal</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="landInput" data-en="Land Size (in Acres)" data-hi="ज़मीन का आकार (एकड़ में)">Land Size (in Acres)</label>
+          <input type="number" id="landInput" min="0" step="0.5"
+            data-en="e.g. 2.5" data-hi="जैसे 2.5" placeholder="e.g. 2.5" />
+        </div>
+
+        <div class="form-group">
+          <label for="incomeInput" data-en="Annual Income (₹)" data-hi="वार्षिक आय (₹)">Annual Income (₹)</label>
+          <input type="number" id="incomeInput" min="0" step="1000"
+            data-en="e.g. 150000" data-hi="जैसे 150000" placeholder="e.g. 150000" />
+        </div>
+
+        <div class="form-group">
+          <label for="cropInput" data-en="Crop Type" data-hi="फसल का प्रकार">Crop Type</label>
+          <select id="cropInput">
+            <option value=""           data-en="-- Select Crop --" data-hi="-- फसल चुनें --">-- Select Crop --</option>
+            <option value="wheat"      data-en="Wheat"      data-hi="गेहूं">Wheat</option>
+            <option value="rice"       data-en="Rice"       data-hi="चावल">Rice</option>
+            <option value="cotton"     data-en="Cotton"     data-hi="कपास">Cotton</option>
+            <option value="maize"      data-en="Maize"      data-hi="मक्का">Maize</option>
+            <option value="soybean"    data-en="Soybean"    data-hi="सोयाबीन">Soybean</option>
+            <option value="sugarcane"  data-en="Sugarcane"  data-hi="गन्ना">Sugarcane</option>
+            <option value="vegetables" data-en="Vegetables" data-hi="सब्जियां">Vegetables</option>
+            <option value="fruits"     data-en="Fruits"     data-hi="फल">Fruits</option>
+            <option value="pulses"     data-en="Pulses"     data-hi="दालें">Pulses</option>
+            <option value="oilseeds"   data-en="Oilseeds"   data-hi="तिलहन">Oilseeds</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="ageInput" data-en="Your Age (Years)" data-hi="आपकी आयु (वर्ष)">Your Age (Years)</label>
+          <input type="number" id="ageInput" min="18" max="99"
+            data-en="e.g. 35" data-hi="जैसे 35" placeholder="e.g. 35" />
+        </div>
+
+      </div>
+
+      <div class="eligibility-actions">
+        <button class="btn-check" id="checkEligibilityBtn"
+          data-en="🔍 Check My Eligibility"
+          data-hi="🔍 मेरी पात्रता जांचें">🔍 Check My Eligibility</button>
+        <button class="btn-reset" id="resetEligibilityBtn"
+          data-en="↺ Reset & Show All"
+          data-hi="↺ रीसेट करें और सभी दिखाएं">↺ Reset & Show All</button>
+      </div>
+
+      <div id="eligibilityResult" class="eligibility-result" style="display:none;"></div>
+    </div>
+  </div>
+
+  <!-- 🔽 Category Filter -->
   <div class="filter-container">
-    <label for="categoryFilter">Filter Schemes:</label>
+    <label for="categoryFilter"
+      data-en="Filter by Category:"
+      data-hi="श्रेणी से फ़िल्टर करें:">Filter by Category:</label>
     <select id="categoryFilter">
-      <option value="all">All Schemes</option>
-      <option value="income_support">Income Support & Welfare</option>
-      <option value="subsidy_support">Subsidy & Input Support</option>
-      <option value="irrigation_infra">Irrigation & Infrastructure</option>
-      <option value="insurance_risk">Insurance & Risk Protection</option>
-      <option value="credit_finance">Credit & Financial Support</option>
-      <option value="training_social">Training & Social Security</option>
+      <option value="all"              data-en="All Schemes"                 data-hi="सभी योजनाएं">All Schemes</option>
+      <option value="income_support"   data-en="Income Support & Welfare"    data-hi="आय सहायता और कल्याण">Income Support & Welfare</option>
+      <option value="subsidy_support"  data-en="Subsidy & Input Support"     data-hi="सब्सिडी और इनपुट सहायता">Subsidy & Input Support</option>
+      <option value="irrigation_infra" data-en="Irrigation & Infrastructure" data-hi="सिंचाई और बुनियादी ढांचा">Irrigation & Infrastructure</option>
+      <option value="insurance_risk"   data-en="Insurance & Risk Protection" data-hi="बीमा और जोखिम सुरक्षा">Insurance & Risk Protection</option>
+      <option value="credit_finance"   data-en="Credit & Financial Support"  data-hi="ऋण और वित्तीय सहायता">Credit & Financial Support</option>
+      <option value="training_social"  data-en="Training & Social Security"  data-hi="प्रशिक्षण और सामाजिक सुरक्षा">Training & Social Security</option>
     </select>
   </div>
 
   <!-- 📦 Schemes List -->
   <div id="schemesContainer"></div>
+
+  <!-- 📋 DOCUMENT CHECKLIST MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modalTitle"
+          data-en="Documents Required"
+          data-hi="आवश्यक दस्तावेज़">Documents Required</h3>
+        <button class="modal-close" id="modalClose">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-subtitle"
+          data-en="Collect these documents before applying:"
+          data-hi="आवेदन करने से पहले ये दस्तावेज़ इकट्ठा करें:">
+          Collect these documents before applying:
+        </p>
+        <ul class="document-list" id="documentList"></ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-print" id="printBtn"
+          data-en="🖨️ Print Checklist"
+          data-hi="🖨️ सूची प्रिंट करें">🖨️ Print Checklist</button>
+        <button class="btn-download" id="downloadBtn"
+          data-en="⬇️ Download as Text"
+          data-hi="⬇️ टेक्स्ट डाउनलोड करें">⬇️ Download as Text</button>
+      </div>
+    </div>
+  </div>
 
   <script src="js/navbar.js"></script>
   <script src="js/schemes.js"></script>

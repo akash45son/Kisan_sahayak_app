@@ -18,12 +18,20 @@
     <div id="chatBox"></div>
 
     <div class="input-area">
+      <!-- 🎤 Mic Button -->
+      <button id="micBtn" title="Speak in Hindi or English">🎤</button>
+
       <input
         type="text"
         id="userInput"
         placeholder="Ask about schemes, insurance, support..."
       />
       <button id="sendBtn">Send</button>
+    </div>
+
+    <!-- 🎤 Voice status indicator -->
+    <div id="voiceStatus" class="voice-status" style="display:none;">
+      🎙️ Listening... Speak now
     </div>
   </div>
 
